@@ -24,7 +24,7 @@ This setup manages an **air switch (AIR1)** and **motor (M0)** in **Unit 10 (U10
 ![image](https://github.com/MohammedM-git/images/blob/main/electrical%20task%204.1.png?raw=true)
 
 
-#**electrical-task-4-2**  
+# **electrical-task-4-2**  
 This circuit uses the IC-510A chip to manage business and travel services automation.
 
 ### **How It Works**  
