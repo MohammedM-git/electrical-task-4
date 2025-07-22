@@ -17,8 +17,7 @@ This setup manages an **air switch (AIR1)** and **motor (M0)** in **Unit 10 (U10
 
 ### **What’s Included**  
 - Wiring diagram or logic for **G3 U10 AIR1 M0**.  
-- Basic control behavior (e.g., motor starts when AIR1 is engaged).  
-
+- Basic control behavior.
 
 ![image](https://github.com/MohammedM-git/images/blob/main/electrical%20task%204.1.png?raw=true)
 
