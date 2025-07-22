@@ -1,0 +1,77 @@
+// Motor driver control pins
+const int EN1 = 3;   // Enable pin for left motors (PWM)
+const int IN1 = 10;  // Left motor IN1
+const int IN2 = 9;   // Left motor IN2
+
+const int EN2 = 11;  // Enable pin for right motors (PWM)
+const int IN3 = 6;   // Right motor IN3
+const int IN4 = 5;   // Right motor IN4
+
+void setup() {
+  // Set all pins as OUTPUT
+  pinMode(EN1, OUTPUT);
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+  pinMode(EN2, OUTPUT);
+  pinMode(IN3, OUTPUT);
+  pinMode(IN4, OUTPUT);
+
+  // Set motor speed to max (255)
+  analogWrite(EN1, 255); // full speed for left motors
+  analogWrite(EN2, 255); // full speed for right motors
+}
+
+void loop() {
+  // Task 1: All motors forward for 30 seconds
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+  delay(30000);
+
+  // Task 2: All motors backward for 30 seconds
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
+  delay(30000);
+
+  // Task 3: Left motors only for 15 seconds
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
+  delay(15000);
+
+  // Right motors only for 15 seconds
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+  delay(15000);
+
+  // Left motors again for 15 seconds
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
+  delay(15000);
+
+  // Right motors again for 15 seconds
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+  delay(15000);
+
+  // Stop all motors
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
+
+  analogWrite(EN1, 0);
+  analogWrite(EN2, 0);
+
+  while (true); // Stop program
+}
