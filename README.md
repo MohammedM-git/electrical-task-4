@@ -23,24 +23,25 @@ This setup manages an **air switch (AIR1)** and **motor (M0)** in **Unit 10 (U10
 
 ![image](https://github.com/MohammedM-git/images/blob/main/electrical%20task%204.1.png?raw=true)
 
-# **IC-510A Control Module**
 
-**Industrial Automation Circuit for Business & Travel Services**  
-This is a robust control circuit built around the **IC-510A** chip, designed for commercial automation systems.
+# **IC-510A-Circuit**
 
-### **Core Functions**
-- **DEC Module**: Handles decision logic and system routing
-- **UNO Interface**: Provides Arduino UNO compatibility for easy programming
-- **ANDUMN Unit**: Processes parallel inputs using AND-gate logic
+**electrical-task-4-2**  
+This circuit uses the IC-510A chip to manage business and travel services automation.
 
-### **System Applications**
-1. **Business Services**  
-   - Processes transactions and data routing
-   - Manages automated customer service systems
+### **How It Works**  
+1. **DEC Module**  
+   - Processes all system decisions  
+   - Routes commands to appropriate components  
 
-2. **Travel Services**  
-   - Controls reservation and scheduling systems
-   - Interfaces with sensor networks for occupancy monitoring
+2. **UNO Interface**  
+   - Provides Arduino UNO compatibility  
+   - Enables system programming and control  
+
+3. **ANDUMN Unit**  
+   - Checks multiple conditions simultaneously  
+   - Only activates outputs when all inputs are valid  
+
 
 
 
