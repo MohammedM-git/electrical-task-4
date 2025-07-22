@@ -1,0 +1,59 @@
+#include <Servo.h>
+
+// Ultrasonic pins
+const int trigPin = 8;
+const int echoPin = 9;
+
+// Servo and L293D
+const int servoPin = 5;
+const int enA = 10;    // L293D EN1
+const int in1 = 11;    // L293D IN1
+const int in2 = 12;    // L293D IN2
+
+Servo myServo;
+int currentAngle = 0;
+
+void setup() {
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  pinMode(enA, OUTPUT);
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
+
+  // Enable L293D to pass power to servo
+  digitalWrite(enA, HIGH);
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+
+  myServo.attach(servoPin);
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Ultrasonic distance measurement
+  digitalWrite(trigPin, LOW); delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH); delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  long duration = pulseIn(echoPin, HIGH);
+  int distance = duration * 0.034 / 2;
+
+  Serial.print("Distance: ");
+  Serial.println(distance);
+
+  // Alternate between 0° and 180° to simulate "spinning"
+  if (distance > 0 && distance <= 10) {
+    // Simulate reverse
+    currentAngle = 0;
+    myServo.write(currentAngle);
+    delay(500);
+    myServo.write(90); // small pause
+    delay(200);
+  } else {
+    // Simulate forward
+    currentAngle = 360;
+    myServo.write(currentAngle);
+    delay(500);
+    myServo.write(90);
+    delay(200);
+  }
+}
