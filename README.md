@@ -1,4 +1,3 @@
-Here’s a clean, simple GitHub description for your **G3 U10 AIR1 M0** circuit, following your style:  
 
 ---
 
